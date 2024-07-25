@@ -37,7 +37,6 @@ fn main() -> std::io::Result<()> {
 
     //1. read password from cmd
     let password = rpassword::prompt_password("Your password: ").unwrap();
-    println!("Your password is {}", password);
 
     if enc {
         //2. generate master key from password using argon2id
@@ -114,5 +113,6 @@ fn main() -> std::io::Result<()> {
         out_file.write_all(&plaintext)?;
     }
 
+    println!("Done!");
     Ok(())
 }
