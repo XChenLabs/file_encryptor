@@ -67,7 +67,6 @@ fn main() -> std::io::Result<()> {
         //6. output encrypted data key (nonce, ciphertext)
         out_file.write_all(&dk_nonce)?;
         out_file.write_all(&enc_data_key)?;
-        println!("enc_data_key len: {}", enc_data_key.len());
 
         //7. output encrypted file data (nonce, ciphertext)
         let cipher = Aes128Gcm::new(&data_key);
